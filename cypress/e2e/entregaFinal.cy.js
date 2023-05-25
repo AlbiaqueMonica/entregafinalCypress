@@ -1,21 +1,11 @@
 /// <reference types="cypress" />
-/*
-- Deberán utilizar el mismo proyecto que utilizaron para la pre-entrega.
-- Deberá contar con una baseURL
-- Deberá poder iniciarse colocando "npm test"
-- Deberán utilizar fixtures (2)
-- Deberán utilizar hooks (Before y after)
-- Deberán utilizar una clase diferente para cada pagina que utilicen
-- Deberán entregarlo en un repositorio de GitHub.
-- El login y el registro debe ser utilizando endpoints (cy.request)
-- Deberán eliminar el usuario creado una vez finalizado el test
-*/
 
 import { HomePage } from "../support/pages/homePage";
 import { ProductPage } from "../support/pages/productPage";
 import { ShoppingCartPage } from "../support/pages/shoppingCartPage";
 import { CheckoutPage } from "../support/pages/checkoutPage";
 import { ReceiptPage } from "../support/pages/receiptPage";
+import { API_URL } from "../support/constants";
 
 describe('Final Challenge', () =>{
     const homePage = new HomePage();
@@ -36,7 +26,7 @@ describe('Final Challenge', () =>{
 
     
 
-    it('Validate add two products', () =>{
+    it('Validate purchase two products', () =>{
         
         //Register user
         const bodyRequest={
@@ -49,7 +39,7 @@ describe('Final Challenge', () =>{
             respuesta: 200
         }
         cy.request({
-            url: data.api.register,
+            url: `${API_URL}register`,
             method: 'POST',
             body: bodyRequest
         }).then(respuesta => {
@@ -57,7 +47,7 @@ describe('Final Challenge', () =>{
         })
         //Login
         cy.request({
-            url: "https://pushing-it.onrender.com/api/login",
+            url: `${API_URL}login`,
             method: 'POST',
             body:{
                 username: bodyRequest.username,
@@ -107,7 +97,7 @@ describe('Final Challenge', () =>{
     after('', () => {
         //eliminar usuario
         cy.request({
-            url: data.api.delete + user,
+            url: `${API_URL}deleteuser/${user}`,
             method: 'DELETE',
             respuesta: 200
         }).then(respuesta=>{

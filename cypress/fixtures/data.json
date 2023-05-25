@@ -13,11 +13,6 @@
             "price": 18
         }
     },
-    "api": {
-        "register": "https://pushing-it.onrender.com/api/register",
-        "login": "https://pushing-it.onrender.com/api/login",
-        "delete":  "https://pushing-it.onrender.com/api/deleteuser/"
-    },
     "checkout":{
         "name": "Monica",
         "lastName": "Albiaque",
