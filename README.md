@@ -26,3 +26,6 @@ Trabajo Final Comisión 7 - Curso Cypress Fabrizio Otranto
     🔰- Eliminar el usuario creado una vez finalizado el test
     
     🔰- Guardar "token" e "user" en LocalStorage
+
+
+![image](https://github.com/AlbiaqueMonica/entregafinalCypress/assets/72052340/d0b9a9aa-c115-4f01-8349-79a17d3bf9b8)
