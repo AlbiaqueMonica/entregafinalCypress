@@ -1,0 +1,26 @@
+{
+    "user": {
+        "username": "monica",
+        "password": "123456!"
+    },
+    "products": {
+        "product1": {
+            "name": "Black Jacket",
+            "price": 25
+        },
+        "product2": {            
+            "name": "Pink Sweater",
+            "price": 18
+        }
+    },
+    "api": {
+        "register": "https://pushing-it.onrender.com/api/register",
+        "login": "https://pushing-it.onrender.com/api/login",
+        "delete":  "https://pushing-it.onrender.com/api/deleteuser/"
+    },
+    "checkout":{
+        "name": "Monica",
+        "lastName": "Albiaque",
+        "cardNumber": "1234567890923456"
+    }
+}
