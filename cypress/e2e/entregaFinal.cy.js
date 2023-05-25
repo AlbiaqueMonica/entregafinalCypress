@@ -49,7 +49,7 @@ describe('Final Challenge', () =>{
             respuesta: 200
         }
         cy.request({
-            url: "https://pushing-it.onrender.com/api/register",
+            url: data.api.register,
             method: 'POST',
             body: bodyRequest
         }).then(respuesta => {
@@ -57,13 +57,13 @@ describe('Final Challenge', () =>{
         })
         //Login
         cy.request({
-            url: data.api.loguin,
+            url: "https://pushing-it.onrender.com/api/login",
             method: 'POST',
             body:{
                 username: bodyRequest.username,
-                password: bodyRequest.password
+                password: bodyRequest.password            
             }
-        }).then(respuesta=>{
+            }).then(respuesta => {
             expect(respuesta.status).to.be.equal(200);
             window.localStorage.setItem('token', respuesta.body.token);
             window.localStorage.setItem('user', respuesta.body.user.username);
@@ -108,7 +108,8 @@ describe('Final Challenge', () =>{
         //eliminar usuario
         cy.request({
             url: data.api.delete + user,
-            method: 'DELETE'
+            method: 'DELETE',
+            respuesta: 200
         }).then(respuesta=>{
             expect(respuesta.status).to.be.equal(200);
         })
