@@ -14,28 +14,23 @@ describe('Final Challenge', () =>{
     const checkoutPage = new CheckoutPage();
     const receiptPage = new ReceiptPage
     let data;
-    const numero = Math.floor(Math.random() * 1000);
-    let user; 
     
     before('', () => {
         cy.fixture("data").then((datos) => {
             data = datos;
-            user = data.user.username + numero
         });
     });
-
-    
 
     it('Validate purchase two products', () =>{
         
         //Register user
         const bodyRequest={
-            username: user,
+            username: data.user.username,
             password: data.user.password,
-            gender:'Female',
-            day:'18',
-            month:'August',
-            year: '1985',
+            gender: data.user.gender,
+            day: data.user.fechaNac.day,
+            month: data.user.fechaNac.day,
+            year: data.user.fechaNac.year,
             respuesta: 200
         }
         cy.request({
@@ -45,6 +40,7 @@ describe('Final Challenge', () =>{
         }).then(respuesta => {
             expect(respuesta.status).to.be.equal(200);
         })
+
         //Login
         cy.request({
             url: `${API_URL}login`,
@@ -58,9 +54,10 @@ describe('Final Challenge', () =>{
             window.localStorage.setItem('token', respuesta.body.token);
             window.localStorage.setItem('user', respuesta.body.user.username);
         });
-        cy.visit("");
-        homePage.clickShoppingLink();
 
+        cy.visit("");
+
+        homePage.clickShoppingLink();
         productPage.addProduct(data.products.product1.name);
         productPage.addProduct(data.products.product2.name);
         productPage.shoppingClick();
@@ -97,7 +94,7 @@ describe('Final Challenge', () =>{
     after('', () => {
         //eliminar usuario
         cy.request({
-            url: `${API_URL}deleteuser/${user}`,
+            url: `${API_URL}deleteuser/${data.user.username}`,
             method: 'DELETE',
             respuesta: 200
         }).then(respuesta=>{

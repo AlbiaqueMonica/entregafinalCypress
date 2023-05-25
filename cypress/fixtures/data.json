@@ -1,7 +1,13 @@
 {
     "user": {
         "username": "monica",
-        "password": "123456!"
+        "password": "123456!",
+        "gender": "Female",
+        "fechaNac":{
+            "day":"18",
+            "month":"August",
+            "year": "1985"
+        }
     },
     "products": {
         "product1": {
