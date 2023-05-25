@@ -1,18 +1,20 @@
-# preEntrega
-# Cypress_ShoppingCart
-Pre-Entrega Curso Cypress Fabricio Otranto
+# Trabajo final
+# Cypress
+Trabajo Final Comisión 7 - Curso Cypress Fabrizio Otranto
 
-✨ Ingresar en la pagina de pushing IT.
+✨ - Crear el usuario e ingresar al sistema mediante requests.
 
-✨ Ingresar al sistema con datos validos.
+✨ - Visitar la pagina de pushing IT.
 
-✨ Dirigirse al modulo "Online Shop".
+✨ - Dirigirse al modulo "Online Shop".
 
-✨ Elegir 2 productos a elección y añadirlos al carrito.
+✨ - Elegir 2 productos a elección y añadirlos al carrito.
 
-✨ Verificar el nombre y precio de los dos productos.
+✨ - Verificar el nombre y precio de los dos productos.
 
-✨ Hacer click en "Show total price" y verificar el precio acumulado de los 2 productos
+✨ - Hacer click en "Show total price" y verificar el precio acumulado de los 2 productos.
 
+✨ - Completar el checkout con sus nombres apellido y una tarjeta de crédito de 16 dígitos.
 
-![image](https://user-images.githubusercontent.com/72052340/234998393-744f4254-c9c5-46fa-a1dc-8d184cf48cfa.png)
+✨ - Verificar los siguientes datos en el ticket de compra (Nombre y apellido, productos,
+    tarjeta de crédito, costo total).
